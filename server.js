@@ -46,7 +46,7 @@ import {Message} from "./constants/messages.js";
       let filteredPath = await filterImageFromURL(image_url.toString());
       const extension = image_url.split('.').pop();
       if (!imageExtension.includes(extension)) {
-        throw new Error(Message.INVALID_IMAGE_EXTENSION);
+        throw new Error(Message.NOT_FOUND_MIME);
       }
       res.status(200).sendFile(filteredPath.toString(), () => {
         deleteLocalFiles([filteredPath]);
