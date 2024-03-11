@@ -36,15 +36,15 @@ import {Message} from "./constants/messages.js";
     try {
       const MAX_LENGTH_URL = 200;
       const imageExtension = ['jpg', 'jpeg', 'png', 'gif'];
-      let {imageUrl} = req.query;
-      if (!imageUrl) {
+      let {image_url} = req.query;
+      if (!image_url) {
         throw new Error(Message.URL_REQUIRED);
       }
-      if (imageUrl.length > MAX_LENGTH_URL) {
+      if (image_url.length > MAX_LENGTH_URL) {
         throw new Error(Message.URL_LENGTH_EXCEEDED);
       }
-      let filteredPath = await filterImageFromURL(imageUrl.toString());
-      const extension = imageUrl.split('.').pop();
+      let filteredPath = await filterImageFromURL(image_url.toString());
+      const extension = image_url.split('.').pop();
       if (!imageExtension.includes(extension)) {
         throw new Error(Message.INVALID_IMAGE_EXTENSION);
       }
