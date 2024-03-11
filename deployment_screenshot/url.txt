@@ -1,0 +1,1 @@
+http://fbi-filtered-image-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg
